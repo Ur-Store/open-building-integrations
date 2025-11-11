@@ -1,11 +1,11 @@
 # [Manufacturer] [Model]
 
-## 1. Overview
+## Overview
 *   **System Type:** (e.g., Automatic Sliding Door Controller, Access Control Unit)
 *   **Common Use Cases:** (e.g., Used for retail entrances, integration with fire alarm systems.)
 *   **Power Input:** (e.g., 230V AC, 24V DC)
 
-## 2. Physical Interface & Pinout
+## Physical Interface & Pinout
 
 This section details the primary control pins, their functions, and how to activate them.
 
@@ -26,7 +26,7 @@ This section details the primary control pins, their functions, and how to activ
 | 10| NOT | Emergency Stop. | Connection to Pin 4 (GND). | Requires reset after activation. |
 | 12| 24V | 24V DC Output | - | Can be used to power small external devices (e.g., a receiver). Max 100mA. |
 
-## 3. Configuration & Behavior
+## Configuration & Behavior
 
 The behavior of the physical interface can often be modified by on-board settings. This section documents those configurations.
 
@@ -50,9 +50,8 @@ The behavior of the physical interface can often be modified by on-board setting
     *   `Enabled`: The system will engage an electric lock when the door is fully closed.
     *   `Disabled`: The door is not locked when closed.
 
----
 
-## 4. Practical Integration Examples
+## Practical Integration Examples
 
 ### Example 1: Connect a Simple Push-Button
 
