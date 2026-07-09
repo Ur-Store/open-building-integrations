@@ -105,3 +105,11 @@ The input and output logic can be customized using the TORMAX control panel or t
     *   The closed contact on `in4` overrides the current operating mode and forces the controller into **OFF** mode.
     *   The door closes, locks, and ignores all opening signals from `in1` and `in2`.
     *   *Note:* Once the "Lockdown" relay opens, the door automatically returns to the mode selected on the control panel (e.g., AUTOMAT 1).
+
+> [!IMPORTANT]
+> **Emergency Exit & Life Safety Compliance (Lockdown Override):**
+> Activating continuous lockdown via `in4` puts the controller in `OFF` mode, disabling motion sensors and engaging the lock. To ensure escape route clearance under fire or evacuation scenarios:
+> 1. **Fire Alarm / Emergency Open Input:** Configure an unused input (e.g., `in5` or `in6`) via the control panel or *iMotion Skipper* software as **"Emergency Open" (Not-Auf)** or **"Fire Alarm" (Brandfall)**. Connect the Fire Alarm System (FAS) or emergency break-glass switch to this input. Triggering this input immediately overrides the lockdown state on `in4` and forces the door fully open.
+> 2. **FR-Model Redundancy (Escape Routes):** Ensure the drive is an Escape Route ("FR") model equipped with a monitored dual-motor/battery backup system. It is certified to open the door automatically in an emergency or during power failure.
+> 3. **Mechanical Break-out:** If installed on a designated evacuation route, the door system must utilize breakout-capable door leaves that swing outward mechanically when pushed from the inside, bypassing any active electronic locks or motor commands.
+

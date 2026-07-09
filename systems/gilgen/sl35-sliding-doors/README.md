@@ -78,3 +78,11 @@ The Gilgen SL35 controller processes operating modes based on the grounded termi
     *   The door closes immediately, engages the electric lock, and ignores all opening signals from motion detectors.
     *   *Emergency Stop Alternative:* For safety-critical physical emergency lockout, a Normally Closed (NC) "Emergency Stop" button can be wired in series into the safety loop between **Pin 5 (EmA)** and **Pin 6 (EmB)**. Breaking this connection immediately triggers an emergency state.
     *   Once the lockdown contact opens, the door automatically returns to its previously selected operating mode.
+
+> [!IMPORTANT]
+> **Emergency Exit & Life Safety Compliance (Lockdown Override):**
+> Setting the door to continuous `Locked` or `Lockdown` mode disables standard motion sensors. To ensure occupants can always escape during an emergency (e.g., fire alarm or evacuation trigger):
+> 1. **Hardware Override (RedOpen):** Wire a Normally Open (NO) contact from the Fire Alarm System (FAS) or an emergency break-glass switch across **Pin 12 (RedOpen)** and **Pin 13 (GND)**. Activating this contact overrides lockdown and forces the door to fully open.
+> 2. **Emergency NC Loop:** Wire an emergency NC contact in series with the loop on **Pin 5 (EmA)** and **Pin 6 (EmB)**. Breaking the connection will halt or open the door depending on safety configuration.
+> 3. **Mechanical Break-out:** If installed on an escape route, ensure the door has mechanical swing-out (break-out) leaves that pivot open in the escape direction when pushed hard, overriding all electronic and motor locking states completely.
+

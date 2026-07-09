@@ -175,3 +175,11 @@ The legacy TCP-51 does not feature a dedicated hardwired lockdown input on the m
     *   When the Lockdown relay opens, it interrupts the NC emergency loop.
     *   The controller immediately executes its emergency shutdown profile (configured via SERCOM to either stop instantly or close and lock the door) and displays Fault Code 10 (Emergency Stop).
     *   Once the Lockdown relay closes the emergency loop again, the system remains in the emergency-off state until it receives a reset pulse (closing **D3** to **D4** momentarily) or mode OFF is re-selected on the control panel.
+
+> [!IMPORTANT]
+> **Emergency Exit & Life Safety Compliance (Lockdown Override):**
+> Forcing a legacy TCP-51 system into `OFF` or locked state via software overrides or emergency loops disables motion sensors. To comply with emergency exit regulations on escape routes:
+> 1. **Emergency Open Override (SERCOM Input):** Configure a programmable input (e.g., **C9** or **F2**) as **"Emergency Open" (Notauf / Fluchtweg)** using TORMAX-SERCOM. Connect the Fire Alarm System (FAS) or emergency break-glass terminal NC/NO contact to this input. Activating it forces the door open regardless of the current mode or lockdown state.
+> 2. **Power-Failure Battery Backup:** Equip the drive with a certified battery unit programmed to execute an emergency open cycle upon power loss or alarm signal.
+> 3. **Mechanical Break-out:** Escape-route installations require mechanical break-out door leaves (Stardor panic profiling) that swing outwards under physical pressure, guaranteeing exit even if the controller is locked or completely powered down.
+
